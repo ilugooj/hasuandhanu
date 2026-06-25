@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎓 Graduation Invitation - Class of 2026</title>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@500;600;700&display=swap"
+    rel="stylesheet"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+        /* ── Reset & base ── */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            image-orientation: from-image;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 20px;
+        }
+
+        :root {
+            --gold: #c9a84c;
+            --gold-light: #e0c87a;
+            --gold-dark: #a07828;
+            --navy: #1a2744;
+            --navy-light: #243456;
+            --navy-dark: #0f1a2e;
+            --cream: #faf7f0;
+            --white: #ffffff;
+            --text: #2c2c2c;
+            --text-light: #5a5a5a;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.18);
+            --shadow-gold: 0 4px 20px rgba(201, 168, 76, 0.3);
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background:
+                radial-gradient(ellipse at 15% 20%, rgba(201, 168, 76, 0.06) 0%, transparent 55%),
+                radial-gradient(ellipse at 85% 75%, rgba(26, 39, 68, 0.05) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 50%, rgba(201, 168, 76, 0.03) 0%, transparent 70%);
+        }
+
+        /* ── Particles ── */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            font-size: 1.2rem;
+            opacity: 0;
+            animation: floatUp 8s infinite ease-in;
+            pointer-events: none;
+        }
+        @keyframes floatUp {
+            0% {
+                transform: translateY(105vh) rotate(0deg) scale(0.3);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            30% {
+                opacity: 0.5;
+            }
+            70% {
+                opacity: 0.25;
+            }
+            100% {
+                transform: translateY(-10vh) rotate(360deg) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* ── Layout ── */
+        .main-container {
+            position: relative;
+            z-index: 1;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            margin-bottom: 20px;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            position: relative;
+        }
+        .card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        /* ── Hero ── */
+        .hero-card {
+            text-align: center;
+            background: linear-gradient(170deg, var(--navy) 0%, var(--navy-light) 40%, #1e3358 100%);
+            color: var(--white);
+            border: none;
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+        }
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 2px solid rgba(201, 168, 76, 0.3);
+            pointer-events: none;
+        }
+        .hero-card::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 2px solid rgba(201, 168, 76, 0.2);
+            pointer-events: none;
+        }
+        .hero-sparkle {
+            position: absolute;
+            pointer-events: none;
+            font-size: 1.4rem;
+            opacity: 0.5;
+            animation: sparklePulse 2.5s infinite ease-in-out;
+        }
+        @keyframes sparklePulse {
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+        }
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            padding: 48px 28px 40px;
+        }
+        .grad-cap-icon {
+            font-size: 3.5rem;
+            display: block;
+            margin-bottom: 8px;
+            animation: capBounce 2s infinite ease-in-out;
+            filter: drop-shadow(0 4px 12px rgba(201, 168, 76, 0.5));
+            color: var(--gold);
+        }
+        @keyframes capBounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            30% {
+                transform: translateY(-16px);
+            }
+            50% {
+                transform: translateY(0);
+            }
+            70% {
+                transform: translateY(-8px);
+            }
+        }
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 4px;
+            color: var(--white);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        .hero-title .gold-accent {
+            color: var(--gold-light);
+        }
+        .hero-subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.6rem;
+            color: var(--gold-light);
+            margin-bottom: 6px;
+            opacity: 0.9;
+        }
+        .hero-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 1px;
+        }
+        .hero-name .ampersand {
+            color: var(--gold-light);
+            font-weight: 300;
+            font-size: 0.8em;
+            display: inline-block;
+            margin: 0 6px;
+        }
+        .hero-degree {
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 4px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .hero-divider {
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 16px auto;
+            border-radius: 2px;
+        }
+        .hero-date {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--gold-light);
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        /* ── Sections ── */
+        .section-header {
+            text-align: center;
+            padding: 8px 20px 0;
+        }
+        .section-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--gold-dark);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+        .section-underline {
+            width: 40px;
+            height: 3px;
+            background: var(--gold);
+            margin: 0 auto 16px;
+            border-radius: 2px;
+        }
+
+        /* ── Gallery ── */
+        .gallery-card {
+            padding: 20px 16px 24px;
+        }
+        .gallery-main-wrapper {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            margin-bottom: 12px;
+            aspect-ratio: 4/3;
+            box-shadow: var(--shadow-sm);
+            cursor: pointer;
+            background: #e8e4db;
+        }
+        .gallery-main-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .gallery-main-wrapper:hover img {
+            transform: scale(1.04);
+        }
+        .gallery-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.85);
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            color: var(--navy);
+            z-index: 5;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(6px);
+        }
+        .gallery-nav-btn:hover {
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+            color: var(--gold-dark);
+        }
+        .gallery-nav-btn.prev {
+            left: 10px;
+        }
+        .gallery-nav-btn.next {
+            right: 10px;
+        }
+        .gallery-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+        .gallery-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d4cfc4;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            padding: 0;
+        }
+        .gallery-dot.active {
+            background: var(--gold);
+            box-shadow: var(--shadow-gold);
+            width: 28px;
+            border-radius: 10px;
+        }
+        .gallery-thumbnails {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 4px 0;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+        .gallery-thumbnails::-webkit-scrollbar {
+            height: 4px;
+        }
+        .gallery-thumbnails::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+        }
+        .gallery-thumb {
+            flex: 0 0 80px;
+            height: 60px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0.55;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            flex-shrink: 0;
+        }
+        .gallery-thumb.active {
+            opacity: 1;
+            border-color: var(--gold);
+            box-shadow: var(--shadow-gold);
+        }
+        .gallery-thumb:hover {
+            opacity: 0.85;
+        }
+        .gallery-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .gallery-caption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-top: 8px;
+            font-style: italic;
+            min-height: 20px;
+            transition: var(--transition);
+        }
+
+        /* ── Details ── */
+        .details-card {
+            padding: 24px 20px;
+        }
+        .detail-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid #f0ede5;
+        }
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        .detail-icon-wrap {
+            flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(201, 168, 76, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--gold-dark);
+        }
+        .detail-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+        .detail-value {
+            font-weight: 500;
+            color: var(--navy);
+            font-size: 1rem;
+        }
+
+        /* ── Map ── */
+        .map-card {
+            padding: 16px;
+        }
+        .map-wrapper {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            aspect-ratio: 16/10;
+            position: relative;
+            background: #e8e4db;
+            border: 2px solid rgba(201, 168, 76, 0.2);
+            transition: var(--transition);
+        }
+        .map-wrapper:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--gold);
+        }
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+        .map-address {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        .map-address i {
+            color: var(--gold-dark);
+            margin-right: 6px;
+        }
+        .map-action-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 24px;
+            background: var(--navy);
+            color: var(--white);
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            letter-spacing: 0.5px;
+            box-shadow: var(--shadow-sm);
+        }
+        .map-action-btn:hover {
+            background: var(--navy-light);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        .map-action-btn i {
+            margin-right: 8px;
+        }
+
+        /* ── Countdown ── */
+        .countdown-row {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 10px 0 0;
+        }
+        .countdown-block {
+            background: rgba(201, 168, 76, 0.08);
+            border-radius: var(--radius-sm);
+            padding: 10px 14px;
+            min-width: 56px;
+            text-align: center;
+        }
+        .countdown-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1;
+        }
+        .countdown-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+            margin-top: 2px;
+        }
+
+        .footer-note {
+            text-align: center;
+            padding: 16px;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+        .footer-note .heart {
+            color: #c0392b;
+            animation: heartBeat 1.2s infinite;
+            display: inline-block;
+        }
+        @keyframes heartBeat {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.25);
+            }
+            50% {
+                transform: scale(1);
+            }
+        }
+
+        /* ── Lightbox ── */
+        .lightbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+            cursor: pointer;
+        }
+        .lightbox-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .lightbox-overlay img {
+            max-width: 92vw;
+            max-height: 88vh;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            transition: transform 0.35s ease;
+            cursor: default;
+        }
+        .lightbox-overlay.active img {
+            transform: scale(1);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 28px;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+            z-index: 1001;
+            transition: var(--transition);
+            background: none;
+            border: none;
+            line-height: 1;
+        }
+        .lightbox-close:hover {
+            color: var(--gold-light);
+            transform: scale(1.15);
+        }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+            z-index: 1001;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            backdrop-filter: blur(4px);
+        }
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: var(--gold-light);
+        }
+        .lightbox-nav.prev-lb {
+            left: 16px;
+        }
+        .lightbox-nav.next-lb {
+            right: 16px;
+        }
+
+        /* ── LANGUAGE POPUP ── */
+        .lang-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 15, 30, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+            opacity: 1;
+            visibility: visible;
+            padding: 20px;
+        }
+        .lang-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .lang-modal {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            max-width: 520px;
+            width: 100%;
+            padding: 40px 32px 36px;
+            text-align: center;
+            box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+            transform: scale(0.92) translateY(20px);
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
+            opacity: 0;
+        }
+        .lang-overlay:not(.hidden) .lang-modal {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+
+        .lang-modal-icon {
+            font-size: 3rem;
+            margin-bottom: 6px;
+        }
+        .lang-modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+        .lang-modal-sub {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+            font-weight: 400;
+        }
+        .lang-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .lang-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 14px 20px;
+            border: 2px solid #e8e4db;
+            border-radius: var(--radius-sm);
+            background: var(--white);
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--navy);
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+            width: 100%;
+        }
+        .lang-btn:hover {
+            border-color: var(--gold);
+            background: rgba(201, 168, 76, 0.06);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+        .lang-btn .lang-flag {
+            font-size: 1.6rem;
+            line-height: 1;
+        }
+        .lang-btn .lang-name {
+            flex: 1;
+            text-align: left;
+        }
+        .lang-btn .lang-native {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 500px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-name {
+                font-size: 1.7rem;
+            }
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            .hero-inner {
+                padding: 36px 16px 30px;
+            }
+            .grad-cap-icon {
+                font-size: 2.6rem;
+            }
+            .gallery-thumb {
+                flex: 0 0 60px;
+                height: 46px;
+            }
+            .countdown-block {
+                padding: 8px 10px;
+                min-width: 46px;
+            }
+            .countdown-number {
+                font-size: 1.3rem;
+            }
+            .section-title {
+                font-size: 1.3rem;
+            }
+            .gallery-nav-btn {
+                width: 34px;
+                height: 34px;
+                font-size: 0.9rem;
+            }
+            .lang-modal {
+                padding: 28px 20px 28px;
+            }
+            .lang-modal-title {
+                font-size: 1.5rem;
+            }
+            .lang-btn {
+                font-size: 0.95rem;
+                padding: 12px 16px;
+            }
+            .lang-btn .lang-flag {
+                font-size: 1.3rem;
+            }
+            .map-wrapper {
+                aspect-ratio: 4/3;
+            }
+        }
+        @media (min-width: 600px) {
+            .map-wrapper {
+                aspect-ratio: 16/9;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ─── LANGUAGE SELECTION POPUP ─── -->
+    <div class="lang-overlay" id="langOverlay" role="dialog" aria-modal="true" aria-label="Language selection">
+        <div class="lang-modal">
+            <div class="lang-modal-icon">🎓</div>
+            <h2 class="lang-modal-title">Hasu &amp; Hanu</h2>
+            <p class="lang-modal-sub">
+                invite you to their Graduation Celebration<br />
+                <span style="font-size:0.85rem; color:var(--text-light);">Choose your preferred language</span>
+            </p>
+            <div class="lang-options">
+                <button class="lang-btn" data-lang="am" aria-label="Amharic">
+                    <span class="lang-flag">🇪🇹</span>
+                    <span class="lang-name">አማርኛ <span class="lang-native">(Amharic)</span></span>
+                </button>
+                <button class="lang-btn" data-lang="om" aria-label="Afaan Oromoo">
+                    <span class="lang-flag">🇪🇹</span>
+                    <span class="lang-name">Afaan Oromoo <span class="lang-native">(Oromo)</span></span>
+                </button>
+                <button class="lang-btn" data-lang="en" aria-label="English">
+                    <span class="lang-flag">🇬🇧</span>
+                    <span class="lang-name">English <span class="lang-native">(English)</span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── PARTICLES ─── -->
+    <div class="particles-container" id="particlesContainer"></div>
+
+    <!-- ─── MAIN CONTENT ─── -->
+    <div class="main-container" id="mainContent">
+        <!-- HERO CARD -->
+        <div class="card hero-card" id="heroCard">
+            <div class="hero-inner">
+                <span class="grad-cap-icon">🎓</span>
+                <p class="hero-subtitle" data-key="heroSub">You're Invited to Celebrate</p>
+                <h1 class="hero-title">Graduation <span class="gold-accent">2026</span></h1>
+                <div class="hero-divider"></div>
+                <p class="hero-name">
+                    Hasenat Shafii <span class="ampersand">&amp;</span> Hanan Nasir
+                </p>
+                <p class="hero-degree" data-key="heroDegree">Graduating Class of 2026</p>
+                <p class="hero-date" data-key="heroDate">Sunday, June 28, 2026</p>
+            </div>
+        </div>
+
+        <!-- PHOTO GALLERY CARD -->
+        <div class="card gallery-card" id="galleryCard">
+            <div class="section-header">
+                <span class="section-tag" data-key="galleryTag">Memories</span>
+                <h2 class="section-title" data-key="galleryTitle">Photo Gallery</h2>
+                <div class="section-underline"></div>
+            </div>
+            <div class="gallery-main-wrapper" id="galleryMainWrapper">
+                <img id="galleryMainImg" src="images/h1.jpg" alt="Graduation photo" loading="eager" />
+                <button class="gallery-nav-btn prev" id="galleryPrev" aria-label="Previous photo">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="gallery-nav-btn next" id="galleryNext" aria-label="Next photo">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="gallery-dots" id="galleryDots"></div>
+            <div class="gallery-thumbnails" id="galleryThumbnails"></div>
+            <p class="gallery-caption" id="galleryCaption" data-key="galleryCap0">📸 Campus memories — freshman year</p>
+        </div>
+
+        <!-- EVENT DETAILS CARD -->
+        <div class="card details-card">
+            <div class="section-header">
+                <span class="section-tag" data-key="detailsTag">The Details</span>
+                <h2 class="section-title" data-key="detailsTitle">Ceremony &amp; Celebration</h2>
+                <div class="section-underline"></div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-icon-wrap"><i class="fa-solid fa-calendar-check"></i></div>
+                <div>
+                    <p class="detail-label" data-key="detailDateLabel">Date</p>
+                    <p class="detail-value" data-key="detailDateVal">Sunday, June 28, 2026</p>
+                </div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-icon-wrap"><i class="fa-solid fa-clock"></i></div>
+                <div>
+                    <p class="detail-label" data-key="detailTimeLabel">Time</p>
+                    <p class="detail-value" data-key="detailTimeVal">Ceremony: 10:00 AM &middot; Reception: 1:00 PM</p>
+                </div>
+            </div>
+            <div class="detail-row">
+                <div class="detail-icon-wrap"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                    <p class="detail-label" data-key="detailVenueLabel">Venue</p>
+                    <p class="detail-value">
+                        <span data-key="detailVenueName">Mattu University</span><br />
+                        <span style="font-size:0.85rem;color:#777;" data-key="detailVenueAddr">8°18'41.7"N 35°34'32.0"E</span>
+                    </p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:16px;">
+                <p style="font-size:0.75rem;text-transform:uppercase;letter-spacing:2px;color:var(--text-light);font-weight:600;" data-key="countdownLabel">
+                    Countdown to the Big Day
+                </p>
+                <div class="countdown-row" id="countdownRow">
+                    <div class="countdown-block"><span class="countdown-number" id="cd-days">--</span><p class="countdown-label" data-key="cdDays">Days</p></div>
+                    <div class="countdown-block"><span class="countdown-number" id="cd-hours">--</span><p class="countdown-label" data-key="cdHours">Hours</p></div>
+                    <div class="countdown-block"><span class="countdown-number" id="cd-mins">--</span><p class="countdown-label" data-key="cdMins">Mins</p></div>
+                    <div class="countdown-block"><span class="countdown-number" id="cd-secs">--</span><p class="countdown-label" data-key="cdSecs">Secs</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAP CARD (enhanced with precise coordinates) -->
+        <div class="card map-card">
+            <div class="section-header">
+                <span class="section-tag" data-key="mapTag">Find Your Way</span>
+                <h2 class="section-title" data-key="mapTitle">Venue Location</h2>
+                <div class="section-underline"></div>
+            </div>
+            <div class="map-wrapper">
+                <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=35.55%2C8.29%2C35.60%2C8.33&amp;layer=mapnik&amp;marker=8.31158%2C35.57556"
+                title="Venue Map"
+                loading="lazy"
+                allowfullscreen
+                ></iframe>
+            </div>
+            <p class="map-address"><i class="fa-solid fa-map-pin"></i> <span data-key="mapAddr">8°18'41.7"N 35°34'32.0"E</span></p>
+            <div style="text-align:center;">
+                <a
+                href="https://maps.app.goo.gl/fAs3uFqLg6V8mv5w7?g_st=atm"
+                target="_blank"
+                rel="noopener"
+                class="map-action-btn"
+                >
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-key="mapBtn">Open in Google Maps</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- RSVP CARD REMOVED -->
+
+    <p class="footer-note" data-key="footer">Made with <span class="heart">❤️</span> &middot; We can't wait to celebrate with you!</p>
+</div>
+
+<!-- ─── LIGHTBOX ─── -->
+<div class="lightbox-overlay" id="lightboxOverlay">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <button class="lightbox-nav prev-lb" id="lightboxPrev"><i class="fa-solid fa-chevron-left"></i></button>
+    <img src="" alt="Enlarged photo" id="lightboxImg" />
+    <button class="lightbox-nav next-lb" id="lightboxNext"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+
+<script>
+    (function() {
+        // ─── TRANSLATIONS ──────────────────────────────────────────────
+        const translations = {
+            en: {
+                heroSub: "You're Invited to Celebrate",
+                heroDegree: "Graduating Class of 2026",
+                heroDate: "Sunday, June 28, 2026",
+                galleryTag: "Memories",
+                galleryTitle: "Photo Gallery",
+                galleryCap: [
+                    "📸 Campus memories — freshman year",
+                    "🎉 Celebrating with friends after finals",
+                    "🏛️ Walking the quad on a perfect autumn day",
+                    "🎓 Cap and gown — ready for the big stage",
+                    "✨ A candid moment at the library steps",
+                    "🥂 The after-party — smiles all around"
+                ],
+                detailsTag: "The Details",
+                detailsTitle: "Ceremony & Celebration",
+                detailDateLabel: "Date",
+                detailDateVal: "Sunday, June 28, 2026",
+                detailTimeLabel: "Time",
+                detailTimeVal: "Ceremony: 10:00 AM · Reception: 1:00 PM",
+                detailVenueLabel: "Venue",
+                detailVenueName: "Mattu University",
+                detailVenueAddr: "8°18'41.7\"N 35°34'32.0\"E",
+                countdownLabel: "Countdown to the Big Day",
+                cdDays: "Days",
+                cdHours: "Hours",
+                cdMins: "Mins",
+                cdSecs: "Secs",
+                mapTag: "Find Your Way",
+                mapTitle: "Venue Location",
+                mapAddr: "8°18'41.7\"N 35°34'32.0\"E",
+                mapBtn: "Open in Google Maps",
+                footer: "Made with ❤️ · We can't wait to celebrate with you!"
+            },
+            am: {
+                heroSub: "በዓሉ ላይ ተጋብዘዋል",
+                heroDegree: "የ2026 የምረቃ ተማሪዎች",
+                heroDate: "እሑድ ሰኔ 28፣ 2026",
+                galleryTag: "ትዝታዎች",
+                galleryTitle: "የፎቶ ማሳያ",
+                galleryCap: [
+                    "📸 የካምፓስ ትዝታዎች — የመጀመሪያ አመት",
+                    "🎉 ከፈተና በኋላ ከጓደኞች ጋር ማክበር",
+                    "🏛️ ፍጹም በሆነ የበልግ ቀን ኳድ ላይ መራመድ",
+                    "🎓 የምረቃ ካብ እና ልብስ — ለትልቅ መድረክ ዝግጁ",
+                    "✨ በቤተ-መጽሐፍት ደረጃዎች ላይ ድንገተኛ ጊዜ",
+                    "🥂 የድህረ-ድግስ — በሁሉም በኩል ፈገግታ"
+                ],
+                detailsTag: "ዝርዝር",
+                detailsTitle: "ሥነ-ሥርዓት እና በዓል",
+                detailDateLabel: "ቀን",
+                detailDateVal: "እሑድ ሰኔ 28፣ 2026",
+                detailTimeLabel: "ሰዓት",
+                detailTimeVal: "ሥነ-ሥርዓት፦ 10፡00 ጠዋት · እራት፦ 1፡00 ከሰዓት",
+                detailVenueLabel: "ቦታ",
+                detailVenueName: "ማቱ ዩኒቨርሲቲ",
+                detailVenueAddr: "8°18'41.7\"N 35°34'32.0\"E",
+                countdownLabel: "ወደ ታላቁ ቀን ቆጠራ",
+                cdDays: "ቀናት",
+                cdHours: "ሰዓታት",
+                cdMins: "ደቂቃዎች",
+                cdSecs: "ሰከንዶች",
+                mapTag: "መንገድ ይፈልጉ",
+                mapTitle: "የቦታ አድራሻ",
+                mapAddr: "8°18'41.7\"N 35°34'32.0\"E",
+                mapBtn: "በጉግል ካርታ ይክፈቱ",
+                footer: "በፍቅር የተሰራ · ከእናንተ ጋር ለማክበር በጉጉት እንጠብቃለን!"
+            },
+            om: {
+                heroSub: "Achii Osoo Affeeraman",
+                heroDegree: "Barattoota 2026",
+                heroDate: "Dilbata Waxabajjii 28, 2026",
+                galleryTag: "Yaadannoo",
+                galleryTitle: "Kuusaa Foti'oo",
+                galleryCap: [
+                    "📸 Yaadannoo Kaampasii — Waggaa jalqabaa",
+                    "🎉 Qormaata booda michootaan ayyaanefachuu",
+                    "🏛️ Guyyaa birgaa qulqulluu irratti Arsii keessa deemsuu",
+                    "🎓 Qombii fi uffata — balbala guddaatti qophooftee",
+                    "✨ Mammaaksa mana kitaabaa irratti yeroo ifaa",
+                    "🥂 Ayyaana boodaa — achi fi achi fayyaa"
+                ],
+                detailsTag: "Qabxii",
+                detailsTitle: "Haawaasa fi Ayyaana",
+                detailDateLabel: "Guyyaa",
+                detailDateVal: "Dilbata Waxabajjii 28, 2026",
+                detailTimeLabel: "Yeroo",
+                detailTimeVal: "Haawaasa: 10:00 Ganama · Ayyaana: 1:00 Booda",
+                detailVenueLabel: "Iddoo",
+                detailVenueName: "Yuunivarsiitii Mattu",
+                detailVenueAddr: "8°18'41.7\"N 35°34'32.0\"E",
+                countdownLabel: "Guyyaa Guddaatti Lakkaawwi",
+                cdDays: "Guyyaa",
+                cdHours: "Sa'aatii",
+                cdMins: "Daquu",
+                cdSecs: "Sekondii",
+                mapTag: "Karaa Barbaaduu",
+                mapTitle: "Teessoo Iddoo",
+                mapAddr: "8°18'41.7\"N 35°34'32.0\"E",
+                mapBtn: "Google Maps-irratti Banii",
+                footer: "Jaalalaan tolfame · Isin wajjin ayyaanefachuuf haalaan eegna!"
+            }
+        };
+
+        // ─── STATE ──────────────────────────────────────────────────────
+        let currentLang = 'en';
+
+        // ─── DOM REFS ──────────────────────────────────────────────────
+        const langOverlay = document.getElementById('langOverlay');
+        const langBtns = document.querySelectorAll('.lang-btn');
+
+        // All translatable elements with data-key
+        const translatableEls = document.querySelectorAll('[data-key]');
+
+        // Gallery caption element (special handling)
+        const galleryCaptionEl = document.getElementById('galleryCaption');
+
+        // ─── PHOTO DATA ────────────────────────────────────────────────
+        const photos = [{
+            src: 'images/h1.jpg',
+            thumb: 'images/h1.jpg',
+            captionKey: 'galleryCap0',
+            rotate: 0
+        }, {
+            src: 'images/hanu1.jpg',
+            thumb: 'images/hanu1.jpg',
+            captionKey: 'galleryCap0',
+            rotate: 0
+        }, {
+            src: 'images/h2.jpg',
+            thumb: 'images/h2.jpg',
+            captionKey: 'galleryCap0',
+            rotate: 0
+        }, {
+            src: 'images/hanu2.jpg',
+            thumb: 'images/hanu2.jpg',
+            captionKey: 'galleryCap0',
+            rotate: 0
+        }, {
+            src: 'images/h3.jpg',
+            thumb: 'images/h3.jpg',
+            captionKey: 'galleryCap0',
+            rotate: 0
+        }, {
+            src: 'images/hanu3.jpg',
+            thumb: 'images/hanu3.jpg',
+            captionKey: 'galleryCap0',
+            rotate: 0
+        }, {
+            src: 'images/h4.jpg',
+            thumb: 'images/h4.jpg',
+            captionKey: 'galleryCap0',
+            rotate: 0
+        }, {
+            src: 'images/hanu4.jpg',
+            thumb: 'images/hanu4.jpg',
+            captionKey: 'galleryCap0',
+            rotate: 0
+        }];
+
+        let currentIndex = 0;
+        let autoAdvanceInterval = null;
+        const AUTO_ADVANCE_DELAY = 5000;
+
+        // ─── GALLERY REFS ──────────────────────────────────────────────
+        const mainImg = document.getElementById('galleryMainImg');
+        const mainWrapper = document.getElementById('galleryMainWrapper');
+        const dotsContainer = document.getElementById('galleryDots');
+        const thumbnailsContainer = document.getElementById('galleryThumbnails');
+        const prevBtn = document.getElementById('galleryPrev');
+        const nextBtn = document.getElementById('galleryNext');
+        const lightboxOverlay = document.getElementById('lightboxOverlay');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+
+        // ─── BUILD GALLERY UI ──────────────────────────────────────────
+        function buildGalleryUI() {
+            dotsContainer.innerHTML = '';
+            thumbnailsContainer.innerHTML = '';
+            photos.forEach((photo, i) => {
+                const dot = document.createElement('button');
+                dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('aria-label', 'Photo ' + (i + 1));
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+
+                const thumb = document.createElement('div');
+                thumb.className = 'gallery-thumb' + (i === 0 ? ' active' : '');
+                const img = document.createElement('img');
+                img.src = photo.thumb;
+                img.alt = 'Thumbnail ' + (i + 1);
+                img.loading = 'lazy';
+                thumb.appendChild(img);
+                thumb.addEventListener('click', () => goToSlide(i));
+                thumbnailsContainer.appendChild(thumb);
+            });
+        }
+
+        // ─── UPDATE SLIDE ──────────────────────────────────────────────
+        function updateSlide(index) {
+            currentIndex = index;
+            const photo = photos[currentIndex];
+            mainImg.src = photo.src;
+            mainImg.style.transform = photo.rotate ? 'rotate(' + photo.rotate + 'deg)' : '';
+            // Update caption using translation
+            const capKey = photo.captionKey;
+            const t = translations[currentLang];
+            const capIndex = parseInt(capKey.replace('galleryCap', ''));
+            if (t && t.galleryCap && t.galleryCap[capIndex] !== undefined) {
+                galleryCaptionEl.textContent = t.galleryCap[capIndex];
+            } else {
+                galleryCaptionEl.textContent = photo.captionKey;
+            }
+
+            const dots = dotsContainer.querySelectorAll('.gallery-dot');
+            dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+
+            const thumbs = thumbnailsContainer.querySelectorAll('.gallery-thumb');
+            thumbs.forEach((t, i) => t.classList.toggle('active', i === currentIndex));
+            if (thumbs[currentIndex]) {
+                thumbs[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+
+            if (lightboxOverlay.classList.contains('active')) {
+                lightboxImg.src = photo.src;
+                lightboxImg.style.transform = photo.rotate ? 'rotate(' + photo.rotate + 'deg)' : '';
+            }
+        }
+
+        function goToSlide(index) {
+            updateSlide(index);
+            resetAutoAdvance();
+        }
+
+        function nextSlide() {
+            goToSlide((currentIndex + 1) % photos.length);
+        }
+
+        function prevSlide() {
+            goToSlide((currentIndex - 1 + photos.length) % photos.length);
+        }
+
+        function resetAutoAdvance() {
+            clearInterval(autoAdvanceInterval);
+            autoAdvanceInterval = setInterval(nextSlide, AUTO_ADVANCE_DELAY);
+        }
+
+        // ─── LIGHTBOX ──────────────────────────────────────────────────
+        function openLightbox(index) {
+            currentIndex = index;
+            const photo = photos[currentIndex];
+            lightboxImg.src = photo.src;
+            lightboxImg.style.transform = photo.rotate ? 'rotate(' + photo.rotate + 'deg)' : '';
+            lightboxOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            clearInterval(autoAdvanceInterval);
+        }
+
+        function closeLightbox() {
+            lightboxOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            resetAutoAdvance();
+            updateSlide(currentIndex);
+        }
+
+        function lightboxNextSlide() {
+            const next = (currentIndex + 1) % photos.length;
+            currentIndex = next;
+            const photo = photos[currentIndex];
+            lightboxImg.src = photo.src;
+            lightboxImg.style.transform = photo.rotate ? 'rotate(' + photo.rotate + 'deg)' : '';
+            updateSlide(currentIndex);
+        }
+
+        function lightboxPrevSlide() {
+            const prev = (currentIndex - 1 + photos.length) % photos.length;
+            currentIndex = prev;
+            const photo = photos[currentIndex];
+            lightboxImg.src = photo.src;
+            lightboxImg.style.transform = photo.rotate ? 'rotate(' + photo.rotate + 'deg)' : '';
+            updateSlide(currentIndex);
+        }
+
+        // ─── GALLERY EVENT LISTENERS ──────────────────────────────────
+        prevBtn.addEventListener('click', (e) => { e.stopPropagation();
+            prevSlide(); });
+        nextBtn.addEventListener('click', (e) => { e.stopPropagation();
+            nextSlide(); });
+        mainWrapper.addEventListener('click', () => openLightbox(currentIndex));
+        lightboxClose.addEventListener('click', (e) => { e.stopPropagation();
+            closeLightbox(); });
+        lightboxOverlay.addEventListener('click', (e) => { if (e.target === lightboxOverlay) closeLightbox(); });
+        lightboxNext.addEventListener('click', (e) => { e.stopPropagation();
+            lightboxNextSlide(); });
+        lightboxPrev.addEventListener('click', (e) => { e.stopPropagation();
+            lightboxPrevSlide(); });
+
+        document.addEventListener('keydown', (e) => {
+            if (lightboxOverlay.classList.contains('active')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowRight') lightboxNextSlide();
+                if (e.key === 'ArrowLeft') lightboxPrevSlide();
+            } else {
+                if (e.key === 'ArrowRight') nextSlide();
+                if (e.key === 'ArrowLeft') prevSlide();
+            }
+        });
+
+        let touchStartX = 0,
+            touchEndX = 0;
+        mainWrapper.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+        mainWrapper.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) nextSlide();
+                else prevSlide();
+            }
+        });
+
+        // ─── COUNTDOWN ──────────────────────────────────────────────────
+        const targetDate = new Date('2026-06-28T10:00:00-05:00');
+        const cdDays = document.getElementById('cd-days');
+        const cdHours = document.getElementById('cd-hours');
+        const cdMins = document.getElementById('cd-mins');
+        const cdSecs = document.getElementById('cd-secs');
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = targetDate - now;
+            if (diff <= 0) {
+                cdDays.textContent = '0';
+                cdHours.textContent = '0';
+                cdMins.textContent = '0';
+                cdSecs.textContent = '0';
+                return;
+            }
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const mins = Math.floor((diff / (1000 * 60)) % 60);
+            const secs = Math.floor((diff / 1000) % 60);
+            cdDays.textContent = days;
+            cdHours.textContent = hours;
+            cdMins.textContent = mins;
+            cdSecs.textContent = secs;
+        }
+
+        // ─── PARTICLES ──────────────────────────────────────────────────
+        function createParticles() {
+            const container = document.getElementById('particlesContainer');
+            const emojis = ['✨', '🌟', '🎓', '⭐', '💫', '🎉', '🎊', '📚', '🏆', '💛'];
+            for (let i = 0; i < 25; i++) {
+                const particle = document.createElement('span');
+                particle.className = 'particle';
+                particle.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+                particle.style.left = Math.random() * 95 + '%';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.animationDuration = (6 + Math.random() * 10) + 's';
+                particle.style.fontSize = (0.8 + Math.random() * 1.8) + 'rem';
+                container.appendChild(particle);
+            }
+        }
+
+        // ─── HERO SPARKLES ─────────────────────────────────────────────
+        function createHeroSparkles() {
+            const hero = document.getElementById('heroCard');
+            const sparkleEmojis = ['✦', '✧', '⋆', '·'];
+            for (let i = 0; i < 12; i++) {
+                const sparkle = document.createElement('span');
+                sparkle.className = 'hero-sparkle';
+                sparkle.textContent = sparkleEmojis[Math.floor(Math.random() * sparkleEmojis.length)];
+                sparkle.style.top = (5 + Math.random() * 85) + '%';
+                sparkle.style.left = (3 + Math.random() * 90) + '%';
+                sparkle.style.animationDelay = Math.random() * 3 + 's';
+                sparkle.style.fontSize = (0.7 + Math.random() * 1.4) + 'rem';
+                sparkle.style.color = Math.random() > 0.5 ? 'var(--gold-light)' : 'rgba(255,255,255,0.7)';
+                hero.appendChild(sparkle);
+            }
+        }
+
+        // ─── TRANSLATION ENGINE ────────────────────────────────────────
+        function applyTranslations(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+            if (!t) return;
+
+            // Update all elements with data-key
+            translatableEls.forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (key.startsWith('galleryCap')) return; // handled separately
+                if (t[key] !== undefined) {
+                    let text = t[key];
+                    if (el.tagName === 'A' && el.querySelector('i')) {
+                        const textNode = el.childNodes[el.childNodes.length - 1];
+                        if (textNode && textNode.nodeType === 3) {
+                            textNode.textContent = ' ' + text;
+                        } else {
+                            el.innerHTML = '';
+                            const icon = document.createElement('i');
+                            icon.className = 'fa-solid fa-arrow-up-right-from-square';
+                            el.appendChild(icon);
+                            el.appendChild(document.createTextNode(' ' + text));
+                        }
+                    } else {
+                        el.textContent = text;
+                    }
+                }
+            });
+
+            // Special handling for gallery captions — update current slide
+            const capKey = photos[currentIndex]?.captionKey;
+            if (capKey) {
+                const capIndex = parseInt(capKey.replace('galleryCap', ''));
+                if (t.galleryCap && t.galleryCap[capIndex] !== undefined) {
+                    galleryCaptionEl.textContent = t.galleryCap[capIndex];
+                }
+            }
+
+            // Update countdown labels
+            document.querySelectorAll('[data-key="cdDays"]').forEach(el => el.textContent = t.cdDays || 'Days');
+            document.querySelectorAll('[data-key="cdHours"]').forEach(el => el.textContent = t.cdHours || 'Hours');
+            document.querySelectorAll('[data-key="cdMins"]').forEach(el => el.textContent = t.cdMins || 'Mins');
+            document.querySelectorAll('[data-key="cdSecs"]').forEach(el => el.textContent = t.cdSecs || 'Secs');
+        }
+
+        // ─── LANGUAGE SELECTION ────────────────────────────────────────
+        function selectLanguage(lang) {
+            if (translations[lang]) {
+                applyTranslations(lang);
+                langOverlay.classList.add('hidden');
+                try {
+                    localStorage.setItem('grad-invite-lang', lang);
+                } catch (_) { /* ignore */ }
+                resetAutoAdvance();
+            }
+        }
+
+        // ─── LANGUAGE BUTTON EVENTS ────────────────────────────────────
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const lang = this.getAttribute('data-lang');
+                selectLanguage(lang);
+            });
+        });
+
+        // ─── CHECK FOR STORED PREFERENCE ──────────────────────────────
+        function checkStoredPreference() {
+            try {
+                const storedLang = localStorage.getItem('grad-invite-lang');
+                if (storedLang && translations[storedLang]) {
+                    applyTranslations(storedLang);
+                    langOverlay.classList.add('hidden');
+                    resetAutoAdvance();
+                    return true;
+                }
+            } catch (_) { /* ignore */ }
+            return false;
+        }
+
+        // ─── INIT ──────────────────────────────────────────────────────
+        function init() {
+            buildGalleryUI();
+
+            const hasStored = checkStoredPreference();
+            if (!hasStored) {
+                langOverlay.classList.remove('hidden');
+                clearInterval(autoAdvanceInterval);
+            } else {
+                updateSlide(0);
+            }
+
+            if (!langOverlay.classList.contains('hidden')) {
+                clearInterval(autoAdvanceInterval);
+            } else {
+                resetAutoAdvance();
+            }
+
+            updateSlide(0);
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            createParticles();
+            createHeroSparkles();
+        }
+
+        // ─── START ─────────────────────────────────────────────────────
+        const storedLangCheck = (() => {
+            try { return localStorage.getItem('grad-invite-lang'); } catch (_) { return null; }
+        })();
+        if (storedLangCheck && translations[storedLangCheck]) {
+            // will be handled in init
+        } else {
+            langOverlay.classList.remove('hidden');
+        }
+
+        init();
+
+        if (!langOverlay.classList.contains('hidden')) {
+            clearInterval(autoAdvanceInterval);
+        }
+    })();
+</script>
+</body>
+</html>
